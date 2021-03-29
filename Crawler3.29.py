@@ -44,7 +44,7 @@ head = {
 
 # 2.分析数据
 def getData(baseurl):
-    count = 0
+    count = 1600
     pic_path = "./" + keyword  # 创建存放图片的文件夹
     if not os.path.exists(pic_path):
         os.mkdir(pic_path)
@@ -53,7 +53,7 @@ def getData(baseurl):
     # baseaskURL(baseurl)
     # page = Number // 20 + 1
     # print(page)
-    for i in range(0, 10):
+    for i in range(40, 63):
         url = baseurl + str(i + 1) + '.html'
         html = askURL(url)
 
@@ -104,9 +104,10 @@ def getData(baseurl):
             pic = bs.select('[class="pic"]')
             pic = re.findall(findPic, str(pic))
             pic = str(pic)
-            pic = re.sub("[\[\]\']", '', pic)
+            pic = re.sub("[\[\]\'\"<>|?*]", '', pic)
+            title = re.sub("[*]", '', title)
             # print(pic)
-            pic_name = title + '.jpg'
+            pic_name = str(count)+'.'+title + '.jpg'
 
             res = requests.get(pic, headers=head)
             time.sleep(0.5)
@@ -187,12 +188,15 @@ def saveDate(datalist, savepath):
     col = (' ', "title", "author", "publish_house", "publish_date", "_abtract", "image_url")
     for i in range(0, 7):
         worksheet.write(0, i, col[i])
-    for i in range(0, 400):
-        print("第%d条" % (i + 1))
-        data = datalist[i]
-        worksheet.write(i + 1, 0, i + 1)
-        for j in range(0, 6):
-            worksheet.write(i + 1, j + 1, data[j])
+    for i in range(1600, 2548):
+        if datalist[i] :
+            print("第%d条" % (i + 1))
+            data = datalist[i]
+            worksheet.write(i + 1, 0, i + 1)
+            for j in range(0, 6):
+                worksheet.write(i + 1, j + 1, data[j])
+        else:
+            break
 
     workbook.save(savepath)
 
