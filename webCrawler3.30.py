@@ -15,7 +15,7 @@ import time
 
 
 def main():
-    baseurl = "https://www.dushu.com/book/1256_"  #1255军事理论64  1256中国军事69  1257世界军事50 1258军事技术61  1259军事历史100 1260兵器66 #前面为URL修改，中间是关键词，后面是页数
+    baseurl = "https://www.dushu.com/book/1259_"  #  1259军事历史100 1260兵器66 #前面为URL修改，中间是关键词，后面是页数
     datalist = getData(baseurl)
     # askURL("https://www.dushu.com/search.aspx?wd=%e8%a5%bf%e6%96%b9%e6%88%98%e4%ba%89&p=")
     savepath = "图书表_分类_军事_"+keyword+"_来源_读书网.xls"
@@ -23,7 +23,7 @@ def main():
 
 
 
-keyword = '中国军事'
+keyword = '军事历史'
 # findNumber = re.compile('<strong class="text-dot">(\d+)</strong>')  # 匹配搜索结果数
 findBookId = re.compile('<h3><a href="(.*?)"')  # 匹配图书编号
 findTitle = re.compile('<h1>(.*?)</h1>')  # 匹配书名
@@ -33,7 +33,7 @@ Number = 0
 bookurl = "https://www.dushu.com"
 head = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36",
-    'Referer': 'https://www.dushu.com/search.aspx?wd=%e8%a5%bf%e6%96%b9%e6%88%98%e4%ba%89&p=2'
+    'Referer': 'https://www.dushu.com/book/1260.html'
 }
 
 
@@ -48,7 +48,7 @@ def getData(baseurl):
     # baseaskURL(baseurl)
     # page = Number // 20 + 1
     # print(page)
-    for i in range(0, 69):
+    for i in range(0, 100):  #页面数修改
         url = baseurl + str(i + 1) + '.html'
         html = askURL(url)
 
@@ -105,7 +105,7 @@ def getData(baseurl):
             pic_name = str(count)+'.'+title + '.jpg'
 
             res = requests.get(pic, headers=head)
-            time.sleep(0.3)
+            time.sleep(1)
             with open(pic_path + '/' + pic_name, 'wb') as f:
                 if res.status_code == 200:
                     try:
