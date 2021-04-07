@@ -26,6 +26,7 @@ def main():
 
 
 def getdata(main_url):
+    pas = set()
     datalist = []
     res = askurl(main_url)
 
@@ -37,6 +38,10 @@ def getdata(main_url):
         data = []
         # print(item)
         resp = askurl(item)
+        if item in pas:
+            continue
+        pas.add(item)
+
         bs = BeautifulSoup(resp, 'lxml')
         title = bs.select('div > h1 > span')[0].string
         print(title)
