@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/addimage.png</file>
+        <file>icon/bayes.png</file>
+        <file>icon/import.png</file>
+        <file>icon/matching.png</file>
+        <file>icon/save.png</file>
+        <file>icon/analysis.png</file>
+        <file>icon/machine-learning.png</file>
+        <file>icon/menu.png</file>
+        <file>icon/pattern-recognition.png</file>
+    </qresource>
+</RCC>

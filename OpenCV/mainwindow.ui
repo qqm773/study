@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>849</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>一个小画板</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/icon/machine-learning.png</normaloff>:/icon/machine-learning.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Preferred</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>60</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QFrame" name="mainframe">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Panel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <widget class="QWidget" name="showwidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>735</width>
+            <height>480</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <property name="leftMargin">
+            <number>4</number>
+           </property>
+           <property name="topMargin">
+            <number>4</number>
+           </property>
+           <property name="rightMargin">
+            <number>4</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="showlabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>60</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>849</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::ClickFocus</enum>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <widget class="QMenu" name="menuHD_R">
+    <property name="title">
+     <string>HD-R</string>
+    </property>
+    <addaction name="bayesclassify"/>
+    <addaction name="separator"/>
+    <addaction name="templatematching"/>
+   </widget>
+   <widget class="QMenu" name="menuImageMenu">
+    <property name="geometry">
+     <rect>
+      <x>542</x>
+      <y>103</y>
+      <width>157</width>
+      <height>129</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="title">
+     <string>ImageMenu</string>
+    </property>
+    <addaction name="actionopen"/>
+    <addaction name="separator"/>
+    <addaction name="actionsave"/>
+    <addaction name="separator"/>
+    <addaction name="actionimport"/>
+   </widget>
+   <widget class="QMenu" name="menutest">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>126</y>
+      <width>121</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/icon/machine-learning.png</normaloff>:/icon/machine-learning.png</iconset>
+    </property>
+   </widget>
+   <addaction name="menutest"/>
+   <addaction name="menuHD_R"/>
+   <addaction name="menuImageMenu"/>
+  </widget>
+  <action name="actionopen">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/addimage.png</normaloff>:/icon/addimage.png</iconset>
+   </property>
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/save.png</normaloff>:/icon/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+  </action>
+  <action name="templatematching">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/matching.png</normaloff>:/icon/matching.png</iconset>
+   </property>
+   <property name="text">
+    <string>TemplateMatching</string>
+   </property>
+  </action>
+  <action name="bayesclassify">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/bayes.png</normaloff>:/icon/bayes.png</iconset>
+   </property>
+   <property name="text">
+    <string>BayesClassify</string>
+   </property>
+  </action>
+  <action name="actionimport">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/import.png</normaloff>:/icon/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>import</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
